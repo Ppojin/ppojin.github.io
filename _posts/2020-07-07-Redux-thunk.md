@@ -1,17 +1,19 @@
 ---
 layout: post
 title:  "redux-thunk"
+
 # date:   2020-04-22 16:10:37 +0900
+
 categories: react
 ---
 
 # Redux-thunk
 
-`Redux` 에서, `Redux-thunk` 라는 libaray 를 이용하여, 'Promise 기반 함수'를 이용하는 `Action`의 상태를 관리하는 방법을 알아보자.
+`Redux` 에서, `Redux-thunk` 라는 libaray 를 이용하여, 'Promise 기반 함수'를 이용하는 `Action` 의 상태를 관리하는 방법을 알아보자.
 
 # 1. Thunk library 설치
 
-```bash
+``` bash
 $ npm install --save redux-thunk
 or
 $ yarn add redux-thunk
@@ -21,7 +23,7 @@ $ yarn add redux-thunk
 
 redux-thunk 를 middleware 에 추가하여 Action 이 직접 dispatch 를 조작할 수 있다.
 
-```jsx
+``` jsx
 // src/index.jsp
 //...
 import ReduxThunk from 'redux-thunk'
@@ -41,33 +43,27 @@ const store = createStore(
 
 ## 3.2. Action
 
-Action이 상태`[Pending, Fail, Success]`에 따라서 Reducer에 ActionName과 Data를 Dispatch한다.
+Action이 상태 `[Pending, Fail, Success]` 에 따라서 Reducer에 ActionName과 Data를 Dispatch한다.
 
-```jsx
+``` jsx
 // Actions
 const getResultAPI = async (data) => {
     return axios.get("/sapmleUrl", data);
 }
-export const getResult = (data) => {
-    return dispatch => {
-        
-        dispatch({
-						type: "entityName/FETCH_ENTITY_LOADING",
-				})
-        
-        return getResultAPI(data)
-            .then(response => {
-                dispatch({
-                    type: "entityName/FETCH_ENTITY_SUCCESS",
-                    payload: response
-                })
-            }).catch(error => {
-                dispatch({
-                    type: "entityName/FETCH_ENTITY_FAILURE",
-                    payload: error
-                })
+export const getResult = (data) => dispatch => {
+    dispatch({type: "entityName/FETCH_ENTITY_LOADING",})
+    return getResultAPI(data)
+        .then(response => {
+            dispatch({
+                type: "entityName/FETCH_ENTITY_SUCCESS",
+                payload: response
             })
-    }
+        }).catch(error => {
+            dispatch({
+                type: "entityName/FETCH_ENTITY_FAILURE",
+                payload: error
+            })
+        })
 }
 ```
 
@@ -75,7 +71,7 @@ export const getResult = (data) => {
 
 Reducer 가 Action Name 에 따라 상태를 구분하여 Store 에 저장한다
 
-```jsx
+``` jsx
 // store의 초기값
 const initialState = {
     loading: false,
@@ -119,7 +115,9 @@ export default (state = initialState, action) => {
 
 1. Action 요청
 
-    ```jsx
+    
+
+``` jsx
     export default ({getResult}) => {
     	const data = {
     		/* some initial data */
@@ -139,10 +137,11 @@ export default (state = initialState, action) => {
 
 2. dispatch 작동
     1. `entityName/FETCH_ENTITY_LOADING`
+        getResult 가 실행될 때 지정된 disaptch( `entityName/FETCH_ENTITY_LOADING` )가 reducer 에 전달
 
-        getResult 가 실행될 때 지정된 disaptch(`entityName/FETCH_ENTITY_LOADING`)가 reducer 에 전달
+        
 
-        ```jsx
+``` jsx
         {
           entityName: {
             result: '',
@@ -153,10 +152,11 @@ export default (state = initialState, action) => {
         ```
 
     2. `entityName/FETCH_ENTITY_SUCCESS`
+        Action 이 요청되었을 때 지정된 disaptch( `entityName/FETCH_ENTITY_SUCCESS` )가 reducer 에 전달
 
-        Action 이 요청되었을 때 지정된 disaptch(`entityName/FETCH_ENTITY_SUCCESS`)가 reducer 에 전달
+        
 
-        ```jsx
+``` jsx
         {
           entityName: {
             result: 'example Data',
@@ -168,7 +168,9 @@ export default (state = initialState, action) => {
 
 3. Store 이용
 
-    ```jsx
+    
+
+``` jsx
     export default ({result, loading}) => {
     	return (
     		<div>
