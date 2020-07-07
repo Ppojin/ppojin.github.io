@@ -20,9 +20,7 @@ $ yarn add redux-thunk
 ```
 
 # 2. Thunk middleware 추가
-
 redux-thunk 를 middleware 에 추가하여 Action 이 직접 dispatch 를 조작할 수 있다.
-
 ``` jsx
 // src/index.jsp
 //...
@@ -37,7 +35,7 @@ const store = createStore(
 //...
 ```
 
-※ composeWithDevTools) [https://www.notion.so/ppojin/redux-devtools-redux-middleware-f17922a15192417ab5a381be7ec93c95](https://www.notion.so/ppojin/redux-devtools-redux-middleware-f17922a15192417ab5a381be7ec93c95)
+※ [composeWithDevTools](https://www.notion.so/ppojin/redux-devtools-redux-middleware-f17922a15192417ab5a381be7ec93c95)
 
 # 3. Redux 작성
 
@@ -138,25 +136,19 @@ export default (state = initialState, action) => {
 2. dispatch 작동
     1. `entityName/FETCH_ENTITY_LOADING`
         getResult 가 실행될 때 지정된 disaptch( `entityName/FETCH_ENTITY_LOADING` )가 reducer 에 전달
-
-        
-
-``` jsx
-        {
-          entityName: {
-            result: '',
-            errorMessage: ''
-        		isLoading: true
-          },
-        }
+        ```
+            {
+            entityName: {
+                result: '',
+                errorMessage: ''
+                    isLoading: true
+            },
+            }
         ```
 
     2. `entityName/FETCH_ENTITY_SUCCESS`
         Action 이 요청되었을 때 지정된 disaptch( `entityName/FETCH_ENTITY_SUCCESS` )가 reducer 에 전달
-
-        
-
-``` jsx
+        ```
         {
           entityName: {
             result: 'example Data',
@@ -167,22 +159,19 @@ export default (state = initialState, action) => {
         ```
 
 3. Store 이용
+```
+export default ({result, loading}) => {
+    return (
+        <div>
+            result= {result}
+            loading= {loading}
+        </div>
+    )	
+}
 
-    
-
-``` jsx
-    export default ({result, loading}) => {
-    	return (
-    		<div>
-    			result= {result}
-    			loading= {loading}
-    		</div>
-    	)	
-    }
-
-    const mapStateToProps = ({pender, megaVoice}) => ({
-        loading: entityName.isLoading,
-        result: entityName.result
-    })
-    export default connect(mapStateToProps,null)(EngineSTT);
-    ```
+const mapStateToProps = ({pender, megaVoice}) => ({
+    loading: entityName.isLoading,
+    result: entityName.result
+})
+export default connect(mapStateToProps,null)(EngineSTT);
+```
