@@ -1,10 +1,10 @@
 ---
-layout: post
 title:  "redux-thunk"
-
-# date:   2020-04-22 16:10:37 +0900
-
-categories: react
+categories:
+    - frontend
+tags:
+    - react
+    - redux
 ---
 
 # Redux-thunk

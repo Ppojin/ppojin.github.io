@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "pip3 install mysqlclient on mac without MySQL server"
 date:   2020-04-22 16:10:37 +0900
 categories: java

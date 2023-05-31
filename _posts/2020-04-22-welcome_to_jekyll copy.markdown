@@ -1,8 +1,8 @@
 ---
-layout: post
+# permalink: /posts/aop/
 title:  "AOP"
 date:   2020-04-22 16:10:37 +0900
-categories: java
+categories: posts
 ---
 
 # AOP
@@ -17,7 +17,7 @@ categories: java
 
   #### JoinPoint
   - `Advice`가 적용될 수 있는 위치
-  - `Advice` 와 `Target` 이 합쳐지는 지점
+  - `Advice` 와 `Target` 이 합쳐지는 지점
   - `Target` 의 `Method`
   - `Target`객체가 구현한 Interface의 모든 Method는 `JoinPoint`가 된다
 
