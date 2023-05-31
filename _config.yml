@@ -110,9 +110,8 @@ author:
   location         : "Uiwang"
   email            :
   links:
-    - label: "Email"
+    - label: "hhjin1814@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:hhjin1814@gmail.com"
     - label: "linkedin"
       icon: "fab fa-fw fa-brands fa-linkedin"
       url: "https://www.linkedin.com/in/devhyojin/"
