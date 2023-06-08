@@ -19,6 +19,7 @@ sudo service docker start
 sudo systemctl enable docker
 sudo usermod -aG docker ec2-user
 ```
+
 정상 작동 확인
 ```bash
 docker run hello-world
@@ -33,6 +34,7 @@ sudo curl \
 
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+
 정상 실행 확인
 ```bash
 docker-compose -v
