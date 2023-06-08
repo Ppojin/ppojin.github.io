@@ -10,6 +10,7 @@ tags:
 ---
 
 ```
+# ~/.ssh/config
 host amazing-instance
 	Hostname ec2-********.ap-northeast-2.compute.amazonaws.com
 	Port 22
@@ -30,7 +31,7 @@ host amazing-pf
 ```
 
 ```bash
-ssh amazing-instance
+$ ssh amazing-instance
 #    ,     #_
 #    ~\_  ####_        Amazon Linux 2023
 #   ~~  \_#####\
@@ -44,7 +45,7 @@ ssh amazing-instance
 # Last login: Wed Jun  7 13:13:42 2023 from ********
 # [ec2-user@ip-******** ~]$ 
 
-ssh amazing-pf
+$ ssh amazing-pf
 # debug1: Authenticator provider $SSH_SK_PROVIDER did not resolve; disabling
 # debug1: Connecting to ec2-********.ap-northeast-2.compute.amazonaws.com port 22.
 # debug1: Connection established.
