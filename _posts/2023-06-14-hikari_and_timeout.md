@@ -1,6 +1,6 @@
 ---
 title:  "hikaricp 와 타임아웃"
-date:   2023-06-07 18:07:00 +0900
+date:   2023-06-14 13:00:00 +0900
 categories: 
   - linux
 tags: 
