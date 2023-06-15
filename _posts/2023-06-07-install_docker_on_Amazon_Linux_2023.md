@@ -3,12 +3,12 @@ title:  "Install `docker` on `Amazon_Linux_2023`"
 date:   2023-06-07 17:38:00 +0900
 categories: 
   - infrastructure
-  - cheet_sheet
 tags: 
   - docker-compose
   - docker
   - aws
   - ec2
+  - cheet_sheet
 ---
 
 # 1. Install docker

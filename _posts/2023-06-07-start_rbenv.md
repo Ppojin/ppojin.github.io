@@ -3,11 +3,11 @@ title:  "start rbenv"
 date:   2023-06-07 17:38:00 +0900
 categories: 
   - infrastructure
-  - cheet_sheet
 tags: 
   - ruby
   - mac
   - rbenv
+  - cheet_sheet
 ---
 
 Install ruby on mac using rvenb

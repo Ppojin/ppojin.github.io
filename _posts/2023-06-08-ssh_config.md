@@ -2,11 +2,11 @@
 title:  "ssh config"
 date:   2023-06-07 18:07:00 +0900
 categories: 
-  - bash
   - linux
-  - cheet_sheet
 tags: 
+  - bash
   - ssh
+  - cheet_sheet
 ---
 
 ```

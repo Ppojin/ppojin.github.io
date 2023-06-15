@@ -2,11 +2,11 @@
 title:  "upload file using fstp"
 date:   2023-06-07 18:34:00 +0900
 categories: 
-  - bash
   - linux
-  - cheet_sheet
 tags: 
+  - bash
   - sftp
+  - cheet_sheet
 ---
 
 # local
